@@ -1,4 +1,8 @@
-Aurora-Mixtral-8x7B-Chat
+<div align="center">
+<h1>
+  Aurora-Mixtral-8x7B-Chat
+</h1>
+</div>
 
 ## 模型
 
