@@ -1,4 +1,4 @@
-![](./assets/auraro.png)
+![](https://github.com/WangRongsheng/Aurora-Mixtral-8x7B-Chat/blob/main/assets/aurora.png)
 
 <div align="center">
 <h1>
