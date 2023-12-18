@@ -1,3 +1,5 @@
+![](./assets/auraro.png)
+
 <div align="center">
 <h1>
   Aurora-Mixtral-8x7B-Chat
