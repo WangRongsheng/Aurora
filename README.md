@@ -16,7 +16,7 @@
 
 |模型|[CMMLU](https://opencompass.org.cn/dataset-detail/CMMLU)|[MMLU](https://opencompass.org.cn/dataset-detail/MMLU)|[C-EVAL](https://opencompass.org.cn/dataset-detail/C-Eval)|
 |:-|:-|:-|:-|
-|Aurora-Mixtral-8x7B-Chat(checkpoints-3000)|49.69|67.33||
+|Aurora-Mixtral-8x7B-Chat(checkpoints-3000)|**49.69**|**67.33**||
 |LLaMA-2-70B-Chat|43.3|63.8|44.3|
 |LLaMA-65B|40.4|63.7|40.6|
 
