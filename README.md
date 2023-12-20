@@ -14,8 +14,7 @@
 
 ## 评测
 
-|模型|CMMLU|MMLU|C-EVAL|
+|模型|[CMMLU](https://opencompass.org.cn/dataset-detail/CMMLU)|MMLU|C-EVAL|
 |:-|:-|:-|:-|
 |checkpoints-3000||||
 
-> [opencompass](https://opencompass.org.cn/leaderboard-llm)
