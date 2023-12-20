@@ -14,8 +14,9 @@
 
 ## 评测
 
-|模型|[CMMLU](https://opencompass.org.cn/dataset-detail/CMMLU)|MMLU|C-EVAL|
+|模型|[CMMLU](https://opencompass.org.cn/dataset-detail/CMMLU)|[MMLU](https://opencompass.org.cn/dataset-detail/MMLU)|C-EVAL|
 |:-|:-|:-|:-|
-|checkpoints-3000|Average: 49.69</br>STEM: 44.69</br>Social Sciences: 52.03</br>Humanities: 49.14</br>Other: 51.58|||
+|checkpoints-3000|Average: 49.69</br>STEM: 44.69</br>Social Sciences: 52.03</br>Humanities: 49.14</br>Other: 51.58|Average: 67.33</br>STEM: 57.63</br>Social Sciences: 77.16</br>Humanities: 62.75</br>Other: 73.67||
+
 
 
