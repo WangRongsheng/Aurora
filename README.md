@@ -59,4 +59,4 @@ coming soon
 ```
 
 ## License
-
+Please follow the [Apache 2.0 License](https://github.com/WangRongsheng/Aurora/blob/main/LICENSE).
