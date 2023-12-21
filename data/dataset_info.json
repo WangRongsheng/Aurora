@@ -1,0 +1,17 @@
+{
+  "alpaca_zh": {
+    "file_name": "alpaca_data_zh_51k-clean.json",
+  },
+  "alpaca_gpt4_zh": {
+    "file_name": "alpaca_gpt4_data_zh-clean.json",
+  },
+  "sharegpt": {
+    "file_name": "sharegpt-70k.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": "history"
+    }
+  }
+}
