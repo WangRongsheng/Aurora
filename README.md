@@ -1,10 +1,12 @@
 ![](https://github.com/WangRongsheng/Aurora-Mixtral-8x7B-Chat/blob/main/assets/aurora.png)
 
 <div align="center">
-<h1>
-  Aurora-Mixtral-8x7B-Chat
-</h1>
+<h2>
+  Aurora: Activating chinese chat capability for Mistral-8x7B sparse Mixture-of-Experts through Instruction-Tuning
+</h2>
 </div>
+
+## Overview
 
 ## Model
 
