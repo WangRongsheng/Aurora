@@ -44,7 +44,7 @@ cd Aurora
 pip install -r requirements.txt
 ```
 
-#### 1. Download Model
+#### 2. Download Model
 
 *Base Model*:
 |Model|Download|
@@ -55,6 +55,39 @@ pip install -r requirements.txt
 |Model|Download|
 |:-|:-|
 |Aurora|[HuggingFace](https://huggingface.co/wangrongsheng/Aurora)|
+
+#### 3. Inference
+
+*Web*:
+```python
+CUDA_VISIBLE_DEVICES=0 python src/web_demo.py \
+    --model_name_or_path ./Mixtral-8x7B-Instruct-v0.1 \
+    --checkpoint_dir Aurora \
+    --finetuning_type lora \
+    --quantization_bit 4 \
+    --template mistral
+```
+Then you can visit: http://127.0.0.1:7860/
+
+*CLI*:
+```python
+CUDA_VISIBLE_DEVICES=0 python src/cli_demo.py \
+    --model_name_or_path ./Mixtral-8x7B-Instruct-v0.1 \
+    --checkpoint_dir Aurora \
+    --finetuning_type lora \
+    --quantization_bit 4 \
+    --template mistral
+```
+
+*API*:
+```python
+CUDA_VISIBLE_DEVICES=0 python src/api_demo.py \
+    --model_name_or_path ./Mixtral-8x7B-Instruct-v0.1 \
+    --checkpoint_dir Aurora \
+    --finetuning_type lora \
+    --quantization_bit 4 \
+    --template mistral
+```
 
 ## Acknowledgments
 
