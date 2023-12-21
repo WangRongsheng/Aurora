@@ -20,7 +20,7 @@
 It is known that LLM evaluation remains a significant challenge. We use three public benchmarks in our study.
 |Model|[CMMLU](https://opencompass.org.cn/dataset-detail/CMMLU)|[MMLU](https://opencompass.org.cn/dataset-detail/MMLU)|[C-EVAL](https://opencompass.org.cn/dataset-detail/C-Eval)|
 |:-|:-|:-|:-|
-|Aurora(checkpoints-3000)|**49.69**|**67.74**||
+|Aurora(checkpoints-3000)|**49.69**|**67.74**|**51.9**|
 |LLaMA-2-70B-Chat|43.3|63.8|44.3|
 |LLaMA-65B|40.4|63.7|40.6|
 
