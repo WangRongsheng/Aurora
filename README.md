@@ -36,6 +36,14 @@ Next are some references we gave you about GPU memory usage during the training 
 
 ## Easy-to-Use
 
+#### 1. Clone and Set up
+
+```git
+https://github.com/WangRongsheng/Aurora.git
+cd Aurora
+pip install -r requirements.txt
+```
+
 #### 1. Download Model
 
 *Base Model*:
