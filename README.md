@@ -6,15 +6,15 @@
 </h1>
 </div>
 
-## 模型
+## Model
 
-|模型|下载地址|
+|Model|Download|
 |:-|:-|
 |Mixtral-8x7B-Instruct-v0.1|[HuggingFace](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1/tree/125c431e2ff41a156b9f9076f744d2f35dd6e67a), [HuggingFace-mirror](https://hf-mirror.com/mistralai/Mixtral-8x7B-Instruct-v0.1/tree/125c431e2ff41a156b9f9076f744d2f35dd6e67a)|
 
-## 评测
+## Evaluation
 
-|模型|[CMMLU](https://opencompass.org.cn/dataset-detail/CMMLU)|[MMLU](https://opencompass.org.cn/dataset-detail/MMLU)|[C-EVAL](https://opencompass.org.cn/dataset-detail/C-Eval)|
+|Model|[CMMLU](https://opencompass.org.cn/dataset-detail/CMMLU)|[MMLU](https://opencompass.org.cn/dataset-detail/MMLU)|[C-EVAL](https://opencompass.org.cn/dataset-detail/C-Eval)|
 |:-|:-|:-|:-|
 |Aurora-Mixtral-8x7B-Chat(checkpoints-3000)|**49.69**|**67.74**||
 |LLaMA-2-70B-Chat|43.3|63.8|44.3|
