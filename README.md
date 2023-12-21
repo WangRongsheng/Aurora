@@ -33,7 +33,7 @@ It is known that LLM evaluation remains a significant challenge. We use three pu
 <!--CMMLU：**Average: 49.69**</br>STEM: 44.69</br>Social Sciences: 52.03</br>Humanities: 49.14</br>Other: 51.58-->
 <!--MMLU：**Average: 67.74**</br>STEM: 57.53</br>Social Sciences: 77.42</br>Humanities: 63.34</br>Other: 74.41-->
 
-
+Next are some references we gave you about GPU memory usage during the training and inference stage. **Please note that we did all inferencing and training on a single GPU.**
 
 |Stage|GPU Memory Usage|
 |:-|:-|
