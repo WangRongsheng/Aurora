@@ -56,7 +56,7 @@ pip install -r requirements.txt
 |:-|:-|
 |Aurora|[HuggingFace](https://huggingface.co/wangrongsheng/Aurora)|
 
-> The huge model parameters are not convenient for you to manage your task, so we provide LoRA weights, which will be merged with the base model before inference.
+> The huge model parameters are not convenient for you to manage your task, so we provide LoRA weights, which will be merged with the base model before inference. You don't have to worry about it.
 
 #### 3. Inference
 
