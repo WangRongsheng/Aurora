@@ -23,6 +23,7 @@
 
 ## Evaluation
 
+It is known that LLM evaluation remains a significant challenge. We use three public benchmarks in our study.
 |Model|[CMMLU](https://opencompass.org.cn/dataset-detail/CMMLU)|[MMLU](https://opencompass.org.cn/dataset-detail/MMLU)|[C-EVAL](https://opencompass.org.cn/dataset-detail/C-Eval)|
 |:-|:-|:-|:-|
 |Aurora(checkpoints-3000)|**49.69**|**67.74**||
@@ -31,6 +32,8 @@
 
 <!--CMMLU：**Average: 49.69**</br>STEM: 44.69</br>Social Sciences: 52.03</br>Humanities: 49.14</br>Other: 51.58-->
 <!--MMLU：**Average: 67.74**</br>STEM: 57.53</br>Social Sciences: 77.42</br>Humanities: 63.34</br>Other: 74.41-->
+
+
 
 |Stage|GPU Memory Usage|
 |:-|:-|
