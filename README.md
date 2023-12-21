@@ -127,6 +127,25 @@ CUDA_VISIBLE_DEVICES=5 python   src/train_bash.py \
 
 </details>
 
+<details>
+<summary>Evaluation your MoE model</summary>
+  
+```python
+CUDA_VISIBLE_DEVICES=0 python src/evaluate.py \
+    --model_name_or_path ./Mixtral-8x7B-Instruct-v0.1 \
+    --checkpoint_dir Aurora/checkpoint-5000 \
+    --finetuning_type lora \
+    --quantization_bit 4 \
+    --template mistral \
+    --task cmmlu \ # cmmlu, mmlu, ceval
+    --split test \
+    --lang en \ # zh, en
+    --n_shot 5 \
+    --batch_size 8
+```
+
+</details>
+
 ## Acknowledgments
 
 This work is mainly done by the [Faculty of Applied Sciences](https://www.mpu.edu.mo/esca/zh/index.php) of the Macao Polytechnic University. The computational resources used in this work were obtained from AWS servers. The fine-tuning framework we used is [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory), which brings a lot of convenience to our work. We also thank the public datasets from the open source community, such as [shareAI](https://huggingface.co/shareAI), [stanford_alpaca](https://github.com/tatsu-lab/stanford_alpaca) and [GPT-4-LLM](https://github.com/Instruction-Tuning-with-GPT-4/GPT-4-LLM). Most importantly we are very grateful to [Mistral AI](https://mistral.ai/), who are leading a new technology boom that will dramatically change the future of technology development.
