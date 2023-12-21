@@ -89,6 +89,40 @@ CUDA_VISIBLE_DEVICES=0 python src/api_demo.py \
     --template mistral
 ```
 
+## Train
+
+If you have a single GPU and its GPU memory size is larger than 48GB, you can train your own models.
+
+<details>
+<summary>Train your MoE model</summary>
+  
+```python
+CUDA_VISIBLE_DEVICES=5 python   src/train_bash.py \
+    --stage sft \
+    --model_name_or_path ./Mixtral-8x7B-Instruct-v0.1 \
+    --do_train \
+    --dataset alpaca_zh,alpaca_gpt4_zh,sharegpt \
+    --finetuning_type lora \
+    --quantization_bit 4 \
+    --overwrite_cache \
+    --output_dir output/ \
+    --per_device_train_batch_size 2 \
+    --gradient_accumulation_steps 4 \
+    --lr_scheduler_type cosine \
+    --logging_steps 100 \
+    --save_steps 1000 \
+    --learning_rate 5e-5 \
+    --num_train_epochs 3.0 \
+    --plot_loss \
+    --fp16 \
+    --template mistral \
+    --lora_target q_proj,v_proj
+```
+
+`--quantization_bit 4` means you will use `QLoRA`, If you have a larger GPU memory size you can remove it and use LoRA.
+
+</details>
+
 ## Acknowledgments
 
 This work is mainly done by the [Faculty of Applied Sciences](https://www.mpu.edu.mo/esca/zh/index.php) of the Macao Polytechnic University. The computational resources used in this work were obtained from AWS servers. The fine-tuning framework we used is [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory), which brings a lot of convenience to our work. We also thank the public datasets from the open source community, such as [shareAI](https://huggingface.co/shareAI), [stanford_alpaca](https://github.com/tatsu-lab/stanford_alpaca) and [GPT-4-LLM](https://github.com/Instruction-Tuning-with-GPT-4/GPT-4-LLM). Most importantly we are very grateful to [Mistral AI](https://mistral.ai/), who are leading a new technology boom that will dramatically change the future of technology development.
