@@ -91,6 +91,8 @@ CUDA_VISIBLE_DEVICES=0 python src/api_demo.py \
     --template mistral
 ```
 
+If you need to load weights for specific checkpoints, you can set them up like this: `--checkpoint_dir Aurora/checkpoint-5000`.
+
 ## Train
 
 If you have a single GPU and its GPU memory size is larger than 48GB, you can train your own models.
@@ -121,7 +123,7 @@ CUDA_VISIBLE_DEVICES=5 python   src/train_bash.py \
     --lora_target q_proj,v_proj
 ```
 
-`--quantization_bit 4` means you will use `QLoRA`, If you have a larger GPU memory size you can remove it and use LoRA.
+`--quantization_bit 4` means you will use `QLoRA`, If you have a larger GPU memory size you can remove it and use `LoRA`.
 
 </details>
 
