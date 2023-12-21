@@ -8,7 +8,7 @@
 
 <h5 align="center">
   
-[![HuggingFace](https://img.shields.io/badge/🤗-HuggingFace-blue.svg)](https://huggingface.co/FarReelAILab/Machine_Mindset_zh_INTP)
+[![HuggingFace](https://img.shields.io/badge/🤗-HuggingFace-blue.svg)](https://huggingface.co/wangrongsheng/Aurora)
 [![arXiv](https://img.shields.io/badge/Arxiv-2312.12999-b31b1b.svg?logo=arXiv)](https://arxiv.org/pdf/2312.12999.pdf) <br>
 
 </h5>
@@ -46,7 +46,7 @@ Next are some references we gave you about GPU memory usage during the training 
 *LoRA Model*:
 |Model|Download|
 |:-|:-|
-|-|[HuggingFace](-)|
+|Aurora|[HuggingFace](https://huggingface.co/wangrongsheng/Aurora)|
 
 ## Acknowledgments
 
