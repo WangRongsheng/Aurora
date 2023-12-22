@@ -20,11 +20,16 @@ Existing research has demonstrated that refining large language models (LLMs) th
 ## Evaluation
 
 It is known that LLM evaluation remains a significant challenge. We use three public benchmarks in our study.
+
+![](./assets/eval.png)
+
+<!--
 |Model|[CMMLU](https://opencompass.org.cn/dataset-detail/CMMLU)|[MMLU](https://opencompass.org.cn/dataset-detail/MMLU)|[C-EVAL](https://opencompass.org.cn/dataset-detail/C-Eval)|
 |:-|:-|:-|:-|
 |Aurora(checkpoints-3000)|**49.69**|**67.74**|**51.9**|
 |LLaMA-2-70B-Chat|43.3|63.8|44.3|
 |LLaMA-65B|40.4|63.7|40.6|
+-->
 
 <!--CMMLU：**Average: 49.69**</br>STEM: 44.69</br>Social Sciences: 52.03</br>Humanities: 49.14</br>Other: 51.58-->
 <!--MMLU：**Average: 67.74**</br>STEM: 57.53</br>Social Sciences: 77.42</br>Humanities: 63.34</br>Other: 74.41-->
@@ -96,6 +101,8 @@ CUDA_VISIBLE_DEVICES=0 python src/api_demo.py \
 If you need to load weights for specific checkpoints, you can set them up like this: `--checkpoint_dir Aurora/checkpoint-5000`.
 
 ## Train
+
+![](./assets/instruction_finetuning.png)
 
 If you have a single GPU and its GPU memory size is larger than 48GB, you can train your own models.
 
