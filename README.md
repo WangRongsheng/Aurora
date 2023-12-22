@@ -12,7 +12,7 @@
 
 <h5 align="center">
 
-<a href='https://arxiv.org/'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>  <a href='[https://huggingface.co/spaces/Vision-CAIR/MiniGPT-v2](https://huggingface.co/wangrongsheng/Aurora)'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'>
+<a href='https://arxiv.org/'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>  <a href='https://huggingface.co/wangrongsheng/Aurora'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'></a>
 
 </h5>
 
