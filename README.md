@@ -11,11 +11,12 @@
 ☨Corresponding author
 
 <h5 align="center">
-  
-[![HuggingFace](https://img.shields.io/badge/🤗-HuggingFace-blue.svg)](https://huggingface.co/wangrongsheng/Aurora)
-[![arXiv](https://img.shields.io/badge/Arxiv-2312.12999-b31b1b.svg?logo=arXiv)](https://arxiv.org/pdf/2312.12999.pdf) <br>
+
+<a href='https://arxiv.org/'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>  <a href='[https://huggingface.co/spaces/Vision-CAIR/MiniGPT-v2](https://huggingface.co/wangrongsheng/Aurora)'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'>
 
 </h5>
+
+
 
 ## Overview
 
