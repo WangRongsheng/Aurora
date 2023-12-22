@@ -6,6 +6,10 @@
 </h2>
 </div>
 
+***Rongsheng Wang**, Haoming Chen, Ruizhe Zhou, Yaofei Duan, Kunyan Cai, Han Ma, Jiaxi Cui, Jian Li, Patrick Cheong-Iao Pang, Yapeng Wang, Tao Tan☨*
+
+☨Corresponding author
+
 <h5 align="center">
   
 [![HuggingFace](https://img.shields.io/badge/🤗-HuggingFace-blue.svg)](https://huggingface.co/wangrongsheng/Aurora)
