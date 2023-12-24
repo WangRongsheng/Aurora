@@ -162,6 +162,7 @@ CUDA_VISIBLE_DEVICES=0 python src/evaluate.py \
 
 ## Results
 
+![](./assets/results.png)
 ![](./assets/results1.png)
 ![](./assets/results2.png)
 ![](./assets/results3.png)
