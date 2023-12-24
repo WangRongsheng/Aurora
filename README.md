@@ -160,6 +160,18 @@ CUDA_VISIBLE_DEVICES=0 python src/evaluate.py \
 
 </details>
 
+## Results
+
+![](./assets/results1.png)
+![](./assets/results2.png)
+![](./assets/results3.png)
+![](./assets/results4.png)
+![](./assets/results5.png)
+![](./assets/results6.png)
+![](./assets/results7.png)
+![](./assets/results8.png)
+![](./assets/results9.png)
+
 ## Acknowledgments
 
 This work is mainly done by the [Faculty of Applied Sciences](https://www.mpu.edu.mo/esca/zh/index.php) of the Macao Polytechnic University. The computational resources used in this work were obtained from AWS servers. The fine-tuning framework we used is [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory), which brings a lot of convenience to our work. We also thank the public datasets from the open source community, such as [shareAI](https://huggingface.co/shareAI), [stanford_alpaca](https://github.com/tatsu-lab/stanford_alpaca) and [GPT-4-LLM](https://github.com/Instruction-Tuning-with-GPT-4/GPT-4-LLM). Most importantly we are very grateful to [Mistral AI](https://mistral.ai/), who are leading a new technology boom that will dramatically change the future of technology development.
