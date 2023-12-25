@@ -6,6 +6,9 @@
 </h2>
 </div>
 
+> [!NOTE]
+> We apologize for the misnaming of the paper due to our mistake: `Mixtral-8x7B-Instruct-v0.1` was incorrectly named `Mistral-8x7B`, and `Mix` and `Mis` do not seem to be the same thing. **We will make a correction in the next release**.
+
 ***Rongsheng Wang**, Haoming Chen, Ruizhe Zhou, Yaofei Duan, Kunyan Cai, Han Ma, Jiaxi Cui, Jian Li, Patrick Cheong-Iao Pang, Yapeng Wang, Tao Tan☨*
 
 ☨Corresponding author
