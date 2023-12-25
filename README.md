@@ -12,7 +12,7 @@
 
 <h5 align="center">
 
-<a href='https://arxiv.org/'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>  <a href='https://huggingface.co/wangrongsheng/Aurora'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'></a>
+<a href='https://arxiv.org/abs/2312.14557'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>  <a href='https://huggingface.co/wangrongsheng/Aurora'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'></a>
 
 </h5>
 
@@ -179,7 +179,14 @@ This work is mainly done by the [Faculty of Applied Sciences](https://www.mpu.ed
 ## Citation
 If you find our work helpful, feel free to give us a cite.
 ```bib
-coming soon
+@misc{wang2023auroraactivating,
+      title={Aurora:Activating Chinese chat capability for Mistral-8x7B sparse Mixture-of-Experts through Instruction-Tuning}, 
+      author={Rongsheng Wang and Haoming Chen and Ruizhe Zhou and Yaofei Duan and Kunyan Cai and Han Ma and Jiaxi Cui and Jian Li and Patrick Cheong-Iao Pang and Yapeng Wang and Tao Tan},
+      year={2023},
+      eprint={2312.14557},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
 ```
 
 ## License
