@@ -69,7 +69,7 @@ pip install -r requirements.txt
 *LoRA Model*:
 |Model|Download|
 |:-|:-|
-|Aurora|[[HuggingFace](https://huggingface.co/wangrongsheng/Aurora)]|
+|Aurora|[[HuggingFace](https://huggingface.co/wangrongsheng/Aurora)] [[ModelScope](https://modelscope.cn/models/wangrongsheng/Aurora-Mixtral-8x7B/summary)]|
 
 > The huge model parameters are not convenient for you to manage your task, so we provide LoRA weights, which will be merged with the base model before inference. You don't have to worry about it.
 
