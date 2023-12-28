@@ -64,12 +64,12 @@ pip install -r requirements.txt
 *Base Model*:
 |Model|Download|
 |:-|:-|
-|Mixtral-8x7B-Instruct-v0.1|[HuggingFace](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1/tree/125c431e2ff41a156b9f9076f744d2f35dd6e67a), [HuggingFace-mirror](https://hf-mirror.com/mistralai/Mixtral-8x7B-Instruct-v0.1/tree/125c431e2ff41a156b9f9076f744d2f35dd6e67a)|
+|Mixtral-8x7B-Instruct-v0.1|[[HuggingFace](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1/tree/125c431e2ff41a156b9f9076f744d2f35dd6e67a)] [[HuggingFace-mirror](https://hf-mirror.com/mistralai/Mixtral-8x7B-Instruct-v0.1/tree/125c431e2ff41a156b9f9076f744d2f35dd6e67a)] [[ModelScope](https://modelscope.cn/models/AI-ModelScope/Mixtral-8x7B-Instruct-v0.1/files)]|
 
 *LoRA Model*:
 |Model|Download|
 |:-|:-|
-|Aurora|[HuggingFace](https://huggingface.co/wangrongsheng/Aurora)|
+|Aurora|[[HuggingFace](https://huggingface.co/wangrongsheng/Aurora)]|
 
 > The huge model parameters are not convenient for you to manage your task, so we provide LoRA weights, which will be merged with the base model before inference. You don't have to worry about it.
 
