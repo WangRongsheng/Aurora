@@ -31,6 +31,10 @@ It is known that LLM evaluation remains a significant challenge. We use three pu
 
 ![](./assets/eval.png)
 
+|Model Checkpoints|BLEU-4|ROUGE-1|ROUGE-2|ROUGE-l|
+|:-|:-|:-|:-|:-|
+|checkpoints-8000|18.3351|38.4327|19.058|26.6573|
+
 <!--
 |Model|[CMMLU](https://opencompass.org.cn/dataset-detail/CMMLU)|[MMLU](https://opencompass.org.cn/dataset-detail/MMLU)|[C-EVAL](https://opencompass.org.cn/dataset-detail/C-Eval)|
 |:-|:-|:-|:-|
