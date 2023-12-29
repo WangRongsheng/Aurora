@@ -31,7 +31,7 @@ class EvaluationArguments:
     )
     n_shot: Optional[int] = field(
         default=5,
-        metadata={"help": "Number of examplars for few-shot learning."}
+        metadata={"help": "Number of exemplars for few-shot learning."}
     )
     save_dir: Optional[str] = field(
         default=None,
