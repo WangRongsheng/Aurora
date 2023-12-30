@@ -33,6 +33,7 @@ It is known that LLM evaluation remains a significant challenge. We use three pu
 
 |Model Checkpoints|BLEU-4|ROUGE-1|ROUGE-2|ROUGE-l|
 |:-|:-|:-|:-|:-|
+|checkpoints-6000|18.4134|38.2669|18.9526|26.572|
 |checkpoints-8000|18.3351|38.4327|19.058|26.6573|
 
 <!--
