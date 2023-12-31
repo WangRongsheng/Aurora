@@ -36,6 +36,8 @@ It is known that LLM evaluation remains a significant challenge. We use three pu
 |checkpoints-6000|18.4134|38.2669|18.9526|26.572|
 |checkpoints-8000|18.3351|38.4327|19.058|26.6573|
 |checkpoints-8000|18.5638|38.5497|19.1992|26.8305|
+|checkpoints-12000|18.7156|38.7787|19.3347|27.0613|
+|checkpoints-14000|18.5194|38.6898|19.2032|26.8863|
 
 <!--
 |Model|[CMMLU](https://opencompass.org.cn/dataset-detail/CMMLU)|[MMLU](https://opencompass.org.cn/dataset-detail/MMLU)|[C-EVAL](https://opencompass.org.cn/dataset-detail/C-Eval)|
