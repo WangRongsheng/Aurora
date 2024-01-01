@@ -195,7 +195,7 @@ This work is mainly done by the [Faculty of Applied Sciences](https://www.mpu.ed
 If you find our work helpful, feel free to give us a cite.
 ```bib
 @misc{wang2023auroraactivating,
-      title={Aurora:Activating Chinese chat capability for Mistral-8x7B sparse Mixture-of-Experts through Instruction-Tuning}, 
+      title={Aurora:Activating Chinese chat capability for Mixtral-8x7B sparse Mixture-of-Experts through Instruction-Tuning}, 
       author={Rongsheng Wang and Haoming Chen and Ruizhe Zhou and Yaofei Duan and Kunyan Cai and Han Ma and Jiaxi Cui and Jian Li and Patrick Cheong-Iao Pang and Yapeng Wang and Tao Tan},
       year={2023},
       eprint={2312.14557},
