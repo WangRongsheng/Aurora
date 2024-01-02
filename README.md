@@ -35,6 +35,8 @@ It is known that LLM evaluation remains a significant challenge. We use three pu
 
 ![](./assets/eval.png)
 
+Scores of different checkpoints on BLEU and ROUGE.
+
 |Model Checkpoints|BLEU-4|ROUGE-1|ROUGE-2|ROUGE-l|
 |:-|:-|:-|:-|:-|
 |checkpoints-6000|18.4134|38.2669|18.9526|26.572|
