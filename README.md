@@ -120,7 +120,7 @@ CUDA_VISIBLE_DEVICES=0 python src/api_demo.py \
     --template mistral
 ```
 
-If you need to load weights for specific checkpoints, you can set them up like this: `--checkpoint_dir Aurora/checkpoint-5000`.
+If you need to load weights for specific checkpoints, you can set them up like this: `--checkpoint_dir Aurora/checkpoint-6000`.
 
 ## Train
 
