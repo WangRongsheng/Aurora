@@ -63,6 +63,105 @@ Next are some references we gave you about GPU memory usage during the training 
 |Training|~43 GiB|
 |Inference|~25 GiB|
 
+## Quick-Use
+
+```python
+import gradio as gr
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer, StoppingCriteria, StoppingCriteriaList, TextIteratorStreamer
+from threading import Thread
+from peft import PeftModel
+import time
+
+# download base model weights
+# https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1
+# or
+# https://modelscope.cn/models/AI-ModelScope/Mixtral-8x7B-Instruct-v0.1
+model_name_or_path = "mistralai/Mixtral-8x7B-Instruct-v0.1"
+
+# download lora model weights
+# https://huggingface.co/wangrongsheng/Aurora
+# or
+# https://modelscope.cn/models/wangrongsheng/Aurora-Mixtral-8x7B
+lora_weights = "wangrongsheng/Aurora"
+
+tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
+model0 = AutoModelForCausalLM.from_pretrained(model_name_or_path, load_in_4bit=True, device_map="auto", torch_dtype=torch.bfloat16)
+model = PeftModel.from_pretrained(
+    model0,
+    lora_weights,
+)
+
+class StopOnTokens(StoppingCriteria):
+    def __call__(self, input_ids: torch.LongTensor, scores: torch.FloatTensor, **kwargs) -> bool:
+        stop_ids = [0,]
+        for stop_id in stop_ids:
+            if input_ids[0][-1] == stop_id:
+                return True
+        return False
+
+def convert_history_to_text(history):
+    text = ""
+    if len(history) > 1:
+        text = "<s> " + "".join(
+                [
+                    "".join(
+                        [
+                            f"[INST]{item[0]}[/INST] {item[1]} ",
+                        ]
+                    )
+                    for item in history[:-1]
+                ]
+            ) + "</s> "
+    text += "".join(
+        [
+            "".join(
+                [
+                    f"[INST]{history[-1][0]}[/INST]",
+                ]
+            )
+        ]
+    )
+    return text
+
+def predict(message, history):
+    history_transformer_format = history + [[message, ""]]
+    stop = StopOnTokens()
+
+    messages = convert_history_to_text(history_transformer_format)
+
+    model_inputs = tokenizer([messages], return_tensors="pt").to("cuda")
+    streamer = TextIteratorStreamer(tokenizer, timeout=10., skip_prompt=True, skip_special_tokens=True)
+    generate_kwargs = dict(
+        model_inputs,
+        streamer=streamer,
+        max_new_tokens=4096,
+        do_sample=True,
+        top_p=0.95,
+        top_k=1000,
+        temperature=1.0,
+        num_beams=1,
+        pad_token_id=tokenizer.eos_token_id,
+        stopping_criteria=StoppingCriteriaList([stop])
+        )
+    t = Thread(target=model.generate, kwargs=generate_kwargs)
+    t.start()
+
+    partial_message  = ""
+    t1 = time.time()
+    count = 0
+    for new_token in streamer:
+        if new_token != '<':
+            partial_message += new_token
+            count += 1
+            yield partial_message
+    t2 = time.time()
+    speed = count/(t2-t1)
+    print("inference speed: %f tok/s" % speed)
+
+gr.ChatInterface(predict,chatbot=gr.Chatbot(height=600,),title="MoE").queue().launch()
+```
+
 ## Easy-to-Use
 
 #### 1. Clone and Set up
