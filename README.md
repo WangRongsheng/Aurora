@@ -65,6 +65,8 @@ Next are some references we gave you about GPU memory usage during the training 
 
 ## Quick-Use
 
+Thanks to the inference code from [@fouvy](https://github.com/fouvy), now you can quickly use Aurora with the following code.
+
 ```python
 import gradio as gr
 import torch
