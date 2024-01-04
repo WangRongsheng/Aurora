@@ -164,6 +164,34 @@ def predict(message, history):
 gr.ChatInterface(predict,chatbot=gr.Chatbot(height=600,),title="MoE").queue().launch()
 ```
 
+Inference VRAM:
+
+```html
+Test 1 (Mixtral-8x7B-Instruct-v0.1)
+inference speed: 13.004695 tok/s
+After inference:
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A    639547      C   python                                    12230MiB |
+|    3   N/A  N/A    639547      C   python                                    15450MiB |
++---------------------------------------------------------------------------------------+
+
+Test 2 (Aurora-Mixtral-8x7B + Mixtral-8x7B-Instruct-v0.1)
+inference speed: 11.221806 tok/s
+After inference:
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A    640109      C   python                                    12196MiB |
+|    3   N/A  N/A    640109      C   python                                    15406MiB |
++---------------------------------------------------------------------------------------+
+```
+
 ## Easy-to-Use
 
 #### 1. Clone and Set up
