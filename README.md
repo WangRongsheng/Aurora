@@ -164,7 +164,8 @@ def predict(message, history):
 gr.ChatInterface(predict,chatbot=gr.Chatbot(height=600,),title="MoE").queue().launch()
 ```
 
-Inference VRAM:
+<details>
+<summary>Inference VRAM</summary>
 
 ```html
 Test 1 (Mixtral-8x7B-Instruct-v0.1)
@@ -191,6 +192,8 @@ After inference:
 |    3   N/A  N/A    640109      C   python                                    15406MiB |
 +---------------------------------------------------------------------------------------+
 ```
+
+</details>
 
 ## Easy-to-Use
 
