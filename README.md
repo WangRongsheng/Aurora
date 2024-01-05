@@ -134,6 +134,9 @@ Next are some references we gave you about GPU memory usage during the training 
 
 Thanks to the inference code from [@fouvy](https://github.com/fouvy), now you can quickly use Aurora with the following code.
 
+<details>
+<summary>Inference VRAM</summary>
+
 ```python
 import gradio as gr
 import torch
@@ -230,9 +233,6 @@ def predict(message, history):
 
 gr.ChatInterface(predict,chatbot=gr.Chatbot(height=600,),title="MoE").queue().launch()
 ```
-
-<details>
-<summary>Inference VRAM</summary>
 
 ```html
 Test 1 (Mixtral-8x7B-Instruct-v0.1)
