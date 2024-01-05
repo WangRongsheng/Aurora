@@ -45,6 +45,73 @@ Scores of different checkpoints on BLEU and ROUGE.
 |checkpoints-12000|18.7156|38.7787|19.3347|27.0613|
 |checkpoints-14000|18.5194|38.6898|19.2032|26.8863|
 
+Aurora's performance was tested in the medical evaluation benchmark [CMB](https://cmedbenchmark.llmzoo.com/)
+
+|Model|Avg. Scores|
+|:-|:-|
+|Aurora|29.87|
+|Mistral-7B|22.26|
+
+<details>
+<summary>More details</summary>
+
+```json
+{
+    "accuracy_per_category": {
+        "医师考试": 0.305,
+        "护理考试": 0.33875,
+        "药师考试": 0.289375,
+        "医技考试": 0.30666666666666664,
+        "专业知识考试": 0.27875,
+        "医学考研": 0.27625
+    },
+    "accuracy_per_subcategory": {
+        "医师考试": {
+            "规培结业": 0.295,
+            "执业助理医师": 0.3175,
+            "执业医师": 0.3375,
+            "中级职称": 0.3125,
+            "高级职称": 0.2625
+        },
+        "护理考试": {
+            "护士执业资格": 0.4,
+            "护师执业资格": 0.325,
+            "主管护师": 0.355,
+            "高级护师": 0.275
+        },
+        "药师考试": {
+            "执业西药师": 0.3075,
+            "执业中药师": 0.2925,
+            "初级药士": 0.325,
+            "初级药师": 0.2925,
+            "初级中药士": 0.2475,
+            "初级中药师": 0.2775,
+            "主管药师": 0.305,
+            "主管中药师": 0.2675
+        },
+        "医技考试": {
+            "医技士": 0.31,
+            "医技师": 0.2775,
+            "主管技师": 0.3325
+        },
+        "专业知识考试": {
+            "基础医学": 0.25,
+            "临床医学": 0.27,
+            "预防医学与公共卫生学": 0.3575,
+            "中医学与中药学": 0.2375
+        },
+        "医学考研": {
+            "护理学": 0.2475,
+            "考研政治": 0.3225,
+            "西医综合": 0.2925,
+            "中医综合": 0.2425
+        }
+    }
+}
+```
+
+</details>
+
 <!--
 |Model|[CMMLU](https://opencompass.org.cn/dataset-detail/CMMLU)|[MMLU](https://opencompass.org.cn/dataset-detail/MMLU)|[C-EVAL](https://opencompass.org.cn/dataset-detail/C-Eval)|
 |:-|:-|:-|:-|
