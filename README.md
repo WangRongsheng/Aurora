@@ -135,7 +135,7 @@ Next are some references we gave you about GPU memory usage during the training 
 Thanks to the inference code from [@fouvy](https://github.com/fouvy), now you can quickly use Aurora with the following code.
 
 <details>
-<summary>Inference VRAM</summary>
+<summary>Inference with Gradio</summary>
 
 ```python
 import gradio as gr
