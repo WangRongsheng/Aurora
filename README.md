@@ -282,7 +282,7 @@ pip install -r requirements.txt
 |Model|Download|
 |:-|:-|
 |Aurora|[[HuggingFace](https://doi.org/10.57967/hf/1556)] [[ModelScope](https://modelscope.cn/models/wangrongsheng/Aurora-Mixtral-8x7B/summary)] [[WiseModel](https://wisemodel.cn/models/wangrongsheng/Aurora-Mixtral-8x7B/intro)]|
-|Aurora-PLus|[[HuggingFace](https://doi.org/10.57967/hf/1556)] [[ModelScope](https://modelscope.cn/models/wangrongsheng/Aurora-Mixtral-8x7B/summary)] [[WiseModel](https://wisemodel.cn/models/wangrongsheng/Aurora-Mixtral-8x7B/intro)]|
+|Aurora-PLus|[[HuggingFace](https://doi.org/10.57967/hf/1580)] [[ModelScope]()] [[WiseModel]()]|
 
 > [!NOTE]
 > Aurora-Plus is a **bilingual Chinese and English** MoE model that we highly recommend for any testing!
