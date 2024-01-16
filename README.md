@@ -23,6 +23,10 @@
 
 </h5>
 
+> [!IMPORTANT]
+> 
+> **We highly recommend using our Aurora based on DPO! 👉[Here](https://github.com/WangRongsheng/Aurora/tree/dpo)**
+
 
 ## Overview
 
