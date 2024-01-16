@@ -63,22 +63,22 @@ class WebChatModel(ChatModel):
             yield error
             return
 
-        if get("top.checkpoints"):
-            checkpoint_dir = ",".join([
-                get_save_dir(get("top.model_name"), get("top.finetuning_type"), ckpt) for ckpt in get("top.checkpoints")
-            ])
+        if get("top.adapter_path"):
+            adapter_name_or_path = ",".join([
+                get_save_dir(get("top.model_name"), get("top.finetuning_type"), adapter)
+            for adapter in get("top.adapter_path")])
         else:
-            checkpoint_dir = None
+            adapter_name_or_path = None
 
         yield ALERTS["info_loading"][lang]
         args = dict(
             model_name_or_path=get("top.model_path"),
-            checkpoint_dir=checkpoint_dir,
+            adapter_name_or_path=adapter_name_or_path,
             finetuning_type=get("top.finetuning_type"),
             quantization_bit=int(get("top.quantization_bit")) if get("top.quantization_bit") in ["8", "4"] else None,
             template=get("top.template"),
-            flash_attn=get("top.flash_attn"),
-            shift_attn=get("top.shift_attn"),
+            flash_attn=(get("top.booster") == "flash_attn"),
+            use_unsloth=(get("top.booster") == "unsloth"),
             rope_scaling=get("top.rope_scaling") if get("top.rope_scaling") in ["linear", "dynamic"] else None
         )
         super().__init__(args)

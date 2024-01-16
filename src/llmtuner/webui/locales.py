@@ -33,20 +33,20 @@ LOCALES = {
             "label": "微调方法"
         }
     },
-    "checkpoints": {
+    "adapter_path": {
         "en": {
-            "label": "Checkpoints"
+            "label": "Adapter path"
         },
         "zh": {
-            "label": "模型断点"
+            "label": "适配器路径"
         }
     },
     "refresh_btn": {
         "en": {
-            "value": "Refresh checkpoints"
+            "value": "Refresh adapters"
         },
         "zh": {
-            "value": "刷新断点"
+            "value": "刷新适配器"
         }
     },
     "advanced_tab": {
@@ -85,20 +85,12 @@ LOCALES = {
             "label": "RoPE 插值方法"
         }
     },
-    "flash_attn": {
+    "booster": {
         "en": {
-            "label": "Use FlashAttention-2"
+            "label": "Booster"
         },
         "zh": {
-            "label": "使用 FlashAttention-2"
-        }
-    },
-    "shift_attn": {
-        "en": {
-            "label": "Use shift short attention (S^2-Attn)"
-        },
-        "zh": {
-            "label": "使用 shift short attention (S^2-Attn)"
+            "label": "加速方式"
         }
     },
     "training_stage": {
@@ -285,6 +277,14 @@ LOCALES = {
             "info": "验证集占全部样本的百分比。"
         }
     },
+    "extra_tab": {
+        "en": {
+            "label": "Extra configurations"
+        },
+        "zh": {
+            "label": "其它参数设置"
+        }
+    },
     "logging_steps": {
         "en": {
             "label": "Logging steps",
@@ -325,14 +325,14 @@ LOCALES = {
             "info": "嵌入向量所添加的噪声大小。"
         }
     },
-    "train_on_prompt": {
+    "sft_packing": {
         "en": {
-            "label": "Train on prompt",
-            "info": "Compute loss on the prompt tokens in supervised fine-tuning."
+            "label": "Pack sequences",
+            "info": "Pack sequences into samples of fixed length in supervised fine-tuning."
         },
         "zh": {
-            "label": "计算输入损失",
-            "info": "在监督微调时候计算输入序列的损失。"
+            "label": "序列打包",
+            "info": "在有监督微调阶段将序列打包为相同长度的样本。"
         }
     },
     "upcast_layernorm": {
@@ -342,7 +342,7 @@ LOCALES = {
         },
         "zh": {
             "label": "缩放归一化层",
-            "info": "将归一化层权重缩放至 32 位浮点数。"
+            "info": "将归一化层权重缩放至 32 位精度。"
         }
     },
     "lora_tab": {
@@ -393,14 +393,14 @@ LOCALES = {
             "info": "除 LoRA 层以外的可训练模块名称。使用英文逗号分隔多个名称。"
         }
     },
-    "resume_lora_training": {
+    "create_new_adapter": {
         "en": {
-            "label": "Resume LoRA training",
-            "info": "Whether to resume training from the last LoRA weights or create new lora weights."
+            "label": "Create new adapter",
+            "info": "Whether to create a new adapter with randomly initialized weight or not."
         },
         "zh": {
-            "label": "继续上次的训练",
-            "info": "接着上次的 LoRA 权重训练或创建一个新的 LoRA 权重。"
+            "label": "新建适配器",
+            "info": "是否创建一个经过随机初始化的新适配器。"
         }
     },
     "rlhf_tab": {
@@ -424,11 +424,11 @@ LOCALES = {
     "reward_model": {
         "en": {
             "label": "Reward model",
-            "info": "Checkpoint of the reward model for PPO training. (Needs to refresh checkpoints)"
+            "info": "Adapter of the reward model for PPO training. (Needs to refresh adapters)"
         },
         "zh": {
             "label": "奖励模型",
-            "info": "PPO 训练中奖励模型的断点路径。（需要刷新断点）"
+            "info": "PPO 训练中奖励模型的适配器路径。（需要刷新适配器）"
         }
     },
     "cmd_preview_btn": {
@@ -577,6 +577,36 @@ LOCALES = {
             "label": "温度系数"
         }
     },
+    "max_shard_size": {
+        "en": {
+            "label": "Max shard size (GB)",
+            "info": "The maximum size for a model file."
+        },
+        "zh": {
+            "label": "最大分块大小（GB）",
+            "info": "单个模型文件的最大大小。"
+        }
+    },
+    "export_quantization_bit": {
+        "en": {
+            "label": "Export quantization bit.",
+            "info": "Quantizing the exported model."
+        },
+        "zh": {
+            "label": "导出量化等级",
+            "info": "量化导出模型。"
+        }
+    },
+    "export_quantization_dataset": {
+        "en": {
+            "label": "Export quantization dataset.",
+            "info": "The calibration dataset used for quantization."
+        },
+        "zh": {
+            "label": "导出量化数据集",
+            "info": "量化过程中使用的校准数据集。"
+        }
+    },
     "export_dir": {
         "en": {
             "label": "Export dir",
@@ -585,16 +615,6 @@ LOCALES = {
         "zh": {
             "label": "导出目录",
             "info": "保存导出模型的文件夹路径。"
-        }
-    },
-    "max_shard_size": {
-        "en": {
-            "label": "Max shard size (GB)",
-            "info": "The maximum size for a model file."
-        },
-        "zh": {
-            "label": "最大分块大小（GB）",
-            "info": "模型文件的最大大小。"
         }
     },
     "export_btn": {
@@ -629,9 +649,9 @@ ALERTS = {
         "en": "Please choose a dataset.",
         "zh": "请选择数据集。"
     },
-    "err_no_checkpoint": {
-        "en": "Please select a checkpoint.",
-        "zh": "请选择断点。"
+    "err_no_adapter": {
+        "en": "Please select an adapter.",
+        "zh": "请选择一个适配器。"
     },
     "err_no_export_dir": {
         "en": "Please provide export dir.",
@@ -644,6 +664,10 @@ ALERTS = {
     "err_demo": {
         "en": "Training is unavailable in demo mode, duplicate the space to a private one first.",
         "zh": "展示模式不支持训练，请先复制到私人空间。"
+    },
+    "err_device_count": {
+        "en": "Multiple GPUs are not supported yet.",
+        "zh": "尚不支持多 GPU 训练。"
     },
     "info_aborting": {
         "en": "Aborted, wait for terminating...",

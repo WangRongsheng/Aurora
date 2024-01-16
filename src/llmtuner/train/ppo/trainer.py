@@ -8,11 +8,12 @@ from typing import TYPE_CHECKING, Dict, List, Optional, Tuple
 from transformers import GenerationConfig, Trainer, TrainerState, TrainerControl
 from transformers.utils import WEIGHTS_NAME, SAFE_WEIGHTS_NAME
 from transformers.trainer_utils import PREFIX_CHECKPOINT_DIR
+from transformers.trainer_pt_utils import remove_dummy_checkpoint
 
 from trl import PPOTrainer
 from trl.core import PPODecorators, logprobs_from_logits
 
-from llmtuner.extras.callbacks import LogCallback, SavePeftModelCallback
+from llmtuner.extras.callbacks import LogCallback, FixValueHeadModelCallback
 from llmtuner.extras.logging import get_logger
 from llmtuner.extras.misc import AverageMeter, count_parameters, get_logits_processor
 from llmtuner.train.ppo.utils import dump_layernorm, get_rewards_from_server, restore_layernorm, replace_model
@@ -60,7 +61,7 @@ class CustomPPOTrainer(PPOTrainer, Trainer):
             self.accelerator.state, "deepspeed_plugin"
         )
         self.log_callback, self.save_callback = callbacks[0], callbacks[1]
-        assert isinstance(self.log_callback, LogCallback) and isinstance(self.save_callback, SavePeftModelCallback)
+        assert isinstance(self.log_callback, LogCallback) and isinstance(self.save_callback, FixValueHeadModelCallback)
 
         if self.args.max_steps > 0:
             logger.info("max_steps is given, it will override any value given in num_train_epochs")
@@ -203,8 +204,13 @@ class CustomPPOTrainer(PPOTrainer, Trainer):
         r"""
         Generates model's responses given queries.
         """
-        if self.finetuning_args.upcast_layernorm:
+        if self.model_args.upcast_layernorm:
             layernorm_params = dump_layernorm(self.model)
+
+        if batch["input_ids"].size(0) == 1: # handle llama2 ppo with gradient accumulation > 1
+            start_index = (batch["input_ids"][0] != self.tokenizer.pad_token_id).nonzero()[0].item()
+            for k, v in batch.items():
+                batch[k] = v[:, start_index:]
 
         unwrapped_model: "AutoModelForCausalLMWithValueHead" = self.accelerator.unwrap_model(self.model)
         generate_output: torch.Tensor = unwrapped_model.generate(
@@ -213,14 +219,14 @@ class CustomPPOTrainer(PPOTrainer, Trainer):
             **batch
         )
 
-        if self.finetuning_args.upcast_layernorm:
+        if self.model_args.upcast_layernorm:
             restore_layernorm(self.model, layernorm_params)
 
         query = batch["input_ids"].detach().cpu()
         response = generate_output[:, batch["input_ids"].size(-1):].detach().cpu()
         queries, responses = [], []
         for i in range(len(query)):
-            query_length = (query[i] != self.tokenizer.pad_token_id).nonzero()[0].item()
+            query_start_index = (query[i] != self.tokenizer.pad_token_id).nonzero()[0].item()
             response_index = (response[i] != self.tokenizer.pad_token_id).nonzero()
 
             if len(response_index) == 0:
@@ -228,7 +234,7 @@ class CustomPPOTrainer(PPOTrainer, Trainer):
             else:
                 response_length = response_index[-1].item() + 1
 
-            queries.append(query[i, query_length:]) # remove padding from left
+            queries.append(query[i, query_start_index:]) # remove padding from left
             responses.append(response[i, :response_length]) # remove padding from right
 
         return queries, responses
@@ -364,9 +370,5 @@ class CustomPPOTrainer(PPOTrainer, Trainer):
                     " use zero_to_fp32.py to recover weights"
                 )
                 self._save(output_dir, state_dict={})
-                for filename in [WEIGHTS_NAME, SAFE_WEIGHTS_NAME]: # remove dummy checkpoint
-                    file = os.path.join(output_dir, filename)
-                    if os.path.isfile(file):
-                        os.remove(file)
-
-                self.model.save_checkpoint(output_dir) # wrapped model
+                remove_dummy_checkpoint(True, output_dir, [WEIGHTS_NAME, SAFE_WEIGHTS_NAME])
+                self.model.save_checkpoint(output_dir)

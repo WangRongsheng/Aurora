@@ -3,8 +3,6 @@ import tiktoken
 from itertools import chain
 from typing import TYPE_CHECKING, Any, Dict, Generator, List, Literal, Tuple, Union
 
-from datasets import load_from_disk
-
 from llmtuner.data.template import get_template_and_fix_tokenizer
 from llmtuner.extras.constants import IGNORE_INDEX
 from llmtuner.extras.logging import get_logger
@@ -43,6 +41,9 @@ def preprocess_dataset(
     stage: Literal["pt", "sft", "rm", "ppo"]
 ) -> Union["Dataset", "IterableDataset"]:
     template = get_template_and_fix_tokenizer(data_args.template, tokenizer)
+
+    if data_args.cache_path is not None and os.path.exists(data_args.cache_path):
+        return dataset # already preprocessed
 
     if data_args.train_on_prompt and template.efficient_eos:
         raise ValueError("Current template does not support `train_on_prompt`.")
@@ -240,10 +241,6 @@ def preprocess_dataset(
         preprocess_func = preprocess_unsupervised_dataset
         print_function = print_unsupervised_dataset_example
 
-    if data_args.cache_path is not None and os.path.exists(data_args.cache_path):
-        logger.warning("Loading dataset from disk will ignore other data arguments.")
-        return load_from_disk(data_args.cache_path)
-
     with training_args.main_process_first(desc="dataset map pre-processing"):
         column_names = list(next(iter(dataset)).keys())
         kwargs = {}
@@ -264,7 +261,7 @@ def preprocess_dataset(
         if data_args.cache_path is not None and not os.path.exists(data_args.cache_path):
             if training_args.should_save:
                 dataset.save_to_disk(data_args.cache_path)
-            raise SystemExit("Dataset saved, rerun this script with the same `--cache_path`.")
+                logger.info("Dataset cache saved at {}.".format(data_args.cache_path))
 
         if training_args.should_log:
             try:
