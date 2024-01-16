@@ -334,26 +334,26 @@ If you have a single GPU and its GPU memory size is larger than 48GB, you can tr
 <summary>Train your MoE model</summary>
   
 ```python
-CUDA_VISIBLE_DEVICES=5 python   src/train_bash.py \
-    --stage sft \
-    --model_name_or_path ./Mixtral-8x7B-Instruct-v0.1 \
+CUDA_VISIBLE_DEVICES=5 python src/train_bash.py \
+    --stage dpo \
     --do_train \
-    --dataset alpaca_zh,alpaca_gpt4_zh,sharegpt \
+    --model_name_or_path ./Mixtral-8x7B-Instruct-v0.1 \
+    --adapter_name_or_path Aurora-Plus \
+    --dataset comparison_gpt4_en,comparison_gpt4_zh \
+    --template mistral \
     --finetuning_type lora \
     --quantization_bit 4 \
-    --overwrite_cache \
-    --output_dir output/ \
+    --lora_target q_proj,v_proj \
+    --output_dir outputdpo \
     --per_device_train_batch_size 2 \
     --gradient_accumulation_steps 4 \
     --lr_scheduler_type cosine \
-    --logging_steps 100 \
+    --logging_steps 10 \
     --save_steps 1000 \
-    --learning_rate 5e-5 \
-    --num_train_epochs 3.0 \
+    --learning_rate 1e-5 \
+    --num_train_epochs 1.0 \
     --plot_loss \
-    --fp16 \
-    --template mistral \
-    --lora_target q_proj,v_proj
+    --fp16
 ```
 
 `--quantization_bit 4` means you will use `QLoRA`, If you have a larger GPU memory size you can remove it and use `LoRA`.
