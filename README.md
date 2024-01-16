@@ -56,14 +56,16 @@ pip install -r requirements.txt
 |:-|:-|
 |Mixtral-8x7B-Instruct-v0.1|[[HuggingFace](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1/tree/125c431e2ff41a156b9f9076f744d2f35dd6e67a)] [[HuggingFace-mirror](https://hf-mirror.com/mistralai/Mixtral-8x7B-Instruct-v0.1/tree/125c431e2ff41a156b9f9076f744d2f35dd6e67a)] [[ModelScope](https://modelscope.cn/models/AI-ModelScope/Mixtral-8x7B-Instruct-v0.1/files)]|
 
-*LoRA Model*:
+*LoRA(SFT) Model*:
 |Model|Download|
 |:-|:-|
 |Aurora|[[HuggingFace](https://doi.org/10.57967/hf/1556)] [[ModelScope](https://modelscope.cn/models/wangrongsheng/Aurora-Mixtral-8x7B/summary)] [[WiseModel](https://wisemodel.cn/models/wangrongsheng/Aurora-Mixtral-8x7B/intro)]|
 |Aurora-PLus|[[HuggingFace](https://doi.org/10.57967/hf/1580)] [[WiseModel](https://wisemodel.cn/models/wangrongsheng/Aurora-Plus)]|
 
-> [!NOTE]
-> `Aurora-Plus` is a **bilingual Chinese and English** MoE model that we highly recommend for any testing!
+*LoRA(DPO) Model*:
+|Model|Download|
+|:-|:-|
+|Aurora-DPO|[[HuggingFace](https://huggingface.co/models?other=doi%3A10.57967%2Fhf%2F1635)]|
 
 > The huge model parameters are not convenient for you to manage your task, so we provide LoRA weights, which will be merged with the base model before inference. You don't have to worry about it.
 
