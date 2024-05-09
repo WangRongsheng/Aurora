@@ -23,6 +23,8 @@
 
 </h5>
 
+<a href="https://trendshift.io/repositories/6402" target="_blank"><img src="https://trendshift.io/api/badge/repositories/6402" alt="WangRongsheng%2FAurora | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+
 > [!IMPORTANT]
 > 
 > - **We highly recommend using our Aurora based on DPO! 👉[Here](https://github.com/WangRongsheng/Aurora/tree/dpo)** If you don't have enough GPU or tutorials to run it, we recommend you to run it with one click using the 👉[Xian Gong Cloud Aurora image](https://www.xiangongyun.com/image/detail/bbcdc87e-20de-561c-a298-4323cf2f6fb2). You can also check out our 👉[tutorial videos](https://www.bilibili.com/video/BV1xw411E7To/).
